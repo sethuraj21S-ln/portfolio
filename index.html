@@ -1,0 +1,220 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sethuraj S | Portfolio</title>
+  <meta name="description" content="Portfolio of Sethuraj S, B.Sc. Computer Science student with a foundation in Java and C programming.">
+  <meta name="theme-color" content="#03050a">
+ 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+ 
+  <!-- Lets particles.js use its 'three' imports straight from a CDN (no build step needed) -->
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+      "three/examples/jsm/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+    }
+  }
+  </script>
+</head>
+<body>
+  <!-- 3D particle background is mounted here by script.js -->
+  <div id="bg" aria-hidden="true"></div>
+ 
+  <header class="nav">
+    <a class="brand" href="#home">Sethuraj S</a>
+    <nav aria-label="Primary">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#education">Education</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+ 
+  <main>
+    <!-- HOME -->
+    <section id="home" class="hero">
+      <div class="container hero-inner">
+        <p class="eyebrow">Hello, I'm</p>
+        <h1>Sethuraj S</h1>
+        <p class="role">Computer Science Student <span aria-hidden="true">|</span> Java &amp; C Developer</p>
+        <p class="lead">
+          B.Sc. Computer Science student with a strong foundation in C and Java programming,
+          data structures and problem solving, looking for an opportunity to build clean, efficient software.
+        </p>
+        <div class="actions">
+          <a class="btn primary" href="Sethuraj_S_Resume.pdf" download>Download Resume</a>
+          <a class="btn ghost" href="#contact">Get in touch</a>
+        </div>
+        <ul class="quick">
+          <li>Kovilpatti, Tamil Nadu, India</li>
+          <li>B.Sc. Computer Science</li>
+          <li>Open to internships</li>
+        </ul>
+      </div>
+    </section>
+ 
+    <!-- ABOUT -->
+    <section id="about" class="section">
+      <div class="container">
+        <h2 class="sec-title reveal">About</h2>
+        <div class="card reveal">
+          <p>
+            I'm a B.Sc. Computer Science student at Sri S Ramasamy Naidu Memorial College with a solid
+            foundation in C and Java, data structures and problem solving. I enjoy turning ideas into
+            working software, learning new tools quickly, and taking feedback to improve.
+          </p>
+          <p>
+            Right now I'm strengthening Data Structures &amp; Algorithms and C++, and exploring web
+            development and AI-assisted tools. My goal is to start my career as a Software Developer, contribute
+            to real-world projects, and learn from experienced engineers.
+          </p>
+        </div>
+      </div>
+    </section>
+ 
+    <!-- SKILLS -->
+    <section id="skills" class="section">
+      <div class="container">
+        <h2 class="sec-title reveal">Skills</h2>
+        <div class="grid grid-3">
+          <article class="card reveal">
+            <h3>Programming</h3>
+            <ul class="chips">
+              <li>C</li>
+              <li>Java</li>
+              <li>Object-Oriented Programming</li>
+            </ul>
+          </article>
+          <article class="card reveal">
+            <h3>Web</h3>
+            <ul class="chips">
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>JavaScript</li>
+            </ul>
+          </article>
+          <article class="card reveal">
+            <h3>Tools</h3>
+            <ul class="chips">
+              <li>Git</li>
+              <li>GitHub</li>
+              <li>VS Code</li>
+              <li>AI-assisted development tools</li>
+            </ul>
+          </article>
+          <article class="card reveal">
+            <h3>Currently Learning</h3>
+            <ul class="chips">
+              <li>Data Structures &amp; Algorithms</li>
+              <li>C++</li>
+            </ul>
+          </article>
+          <article class="card reveal span-2">
+            <h3>Strengths</h3>
+            <ul class="chips">
+              <li>Problem solving</li>
+              <li>Debugging</li>
+              <li>Teamwork</li>
+              <li>Time management</li>
+              <li>Openness to feedback</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+ 
+    <!-- EDUCATION -->
+    <section id="education" class="section">
+      <div class="container">
+        <h2 class="sec-title reveal">Education</h2>
+        <div class="grid grid-2">
+          <article class="card reveal">
+            <p class="tag">Semester IV GPA: 7.10 / 10</p>
+            <h3>B.Sc. Computer Science</h3>
+            <p class="muted">Sri S Ramasamy Naidu Memorial College (Autonomous), affiliated to Madurai Kamaraj University</p>
+            <p class="small">Programming in C, Java, Data Structures, Database Management Systems, Operating Systems, Web Basics</p>
+          </article>
+          <article class="card reveal">
+            <p class="tag">83.17% (499 / 600)</p>
+            <h3>Higher Secondary (12th Grade)</h3>
+          </article>
+        </div>
+      </div>
+    </section>
+ 
+    <!-- PROJECTS -->
+    <section id="projects" class="section">
+      <div class="container">
+        <h2 class="sec-title reveal">Projects</h2>
+        <article class="card project reveal">
+          <div class="project-head">
+            <h3>Billing Website</h3>
+            <ul class="chips">
+              <li>HTML</li>
+              <li>CSS3</li>
+              <li>JavaScript</li>
+            </ul>
+          </div>
+          <p class="muted">Academic, self-initiated project</p>
+          <ul class="list">
+            <li>Built a functional billing website to manage product items and generate receipts.</li>
+            <li>Implemented user input handling and dynamic logic using JavaScript.</li>
+            <li>Designed the page structure and styling with HTML and CSS3, using AI-assisted tools to speed up development.</li>
+            <li>Explored and chose the technology stack independently, building confidence in learning new tools.</li>
+          </ul>
+          <!-- When the project is on GitHub, add a link here, for example:
+          <a class="btn ghost small-btn" href="https://github.com/your-username/your-repo" target="_blank" rel="noopener">View on GitHub</a>
+          -->
+        </article>
+      </div>
+    </section>
+ 
+    <!-- INTERESTS -->
+    <section class="section">
+      <div class="container">
+        <h2 class="sec-title reveal">Interests</h2>
+        <div class="grid grid-3">
+          <article class="card reveal"><p>Core Java and C programming</p></article>
+          <article class="card reveal"><p>Web application development and modern UI tools</p></article>
+          <article class="card reveal"><p>Practical applications of AI tools in software development</p></article>
+        </div>
+      </div>
+    </section>
+ 
+    <!-- CONTACT -->
+    <section id="contact" class="section">
+      <div class="container">
+        <h2 class="sec-title reveal">Contact</h2>
+        <div class="card contact reveal">
+          <p class="lead">I'm open to internship and entry-level opportunities. Feel free to reach out.</p>
+          <ul class="contact-list">
+            <li><span>Email</span><a href="mailto:sethuraj2006r@gmail.com">sethuraj2006r@gmail.com</a></li>
+            <li><span>Phone</span><a href="tel:+918190962101">+91 81909 62101</a></li>
+            <li><span>Location</span>Kovilpatti, Tamil Nadu, India</li>
+          </ul>
+          <div class="actions">
+            <a class="btn primary" href="mailto:sethuraj2006r@gmail.com">Send an email</a>
+            <a class="btn ghost" href="Sethuraj_S_Resume.pdf" download>Download Resume</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+ 
+  <footer class="footer">
+    <p>&copy; <span id="year">2026</span> Sethuraj S</p>
+  </footer>
+ 
+  <script type="module" src="script.js"></script>
+</body>
+</html>
+ 
+Claude finished the response
