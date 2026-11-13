@@ -41,6 +41,41 @@ if ('IntersectionObserver' in window) {
   sections.forEach((s) => navObserver.observe(s));
 }
 
+/* ---------- Light / dark theme ---------- */
+const root = document.documentElement;
+const themeBtn = document.getElementById('theme-toggle');
+const themeMeta = document.querySelector('meta[name="theme-color"]');
+const THEME_BG = { dark: '#03050a', light: '#f3f6fc' }; // same as --bg in style.css
+let swarm = null; // set once the 3D background is running
+
+function currentTheme() {
+  return root.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
+}
+
+// Keep the button label, browser bar colour and 3D background in step with the theme
+function syncTheme() {
+  const theme = currentTheme();
+  if (themeBtn) {
+    const next = theme === 'light' ? 'dark' : 'light';
+    themeBtn.setAttribute('aria-label', `Switch to ${next} theme`);
+    themeBtn.setAttribute('title', `Switch to ${next} theme`);
+  }
+  if (themeMeta) themeMeta.setAttribute('content', THEME_BG[theme]);
+  if (swarm && swarm.bgCompositePass) {
+    swarm.bgCompositePass.uniforms['bgColor'].value.set(THEME_BG[theme]);
+  }
+}
+
+if (themeBtn) {
+  themeBtn.addEventListener('click', () => {
+    const next = currentTheme() === 'light' ? 'dark' : 'light';
+    root.setAttribute('data-theme', next);
+    try { localStorage.setItem('theme', next); } catch (e) { /* private mode: just don't remember */ }
+    syncTheme();
+  });
+}
+syncTheme();
+
 /* ---------- 3D particle background ---------- */
 async function startBackground() {
   if (reduceMotion) return; // respect users who prefer less motion; CSS fallback is used
@@ -49,7 +84,8 @@ async function startBackground() {
     const { ParticlesSwarm } = await import('./particles.js');
 
     const small = window.matchMedia('(max-width: 768px)').matches;
-    const swarm = new ParticlesSwarm(document.getElementById('bg'), small ? 6000 : 15000);
+    swarm = new ParticlesSwarm(document.getElementById('bg'), small ? 6000 : 15000);
+    syncTheme(); // apply the right background colour straight away
 
     document.body.classList.add('bg-ready');
 
