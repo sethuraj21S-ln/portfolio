@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,12 +6,26 @@
   <title>Sethuraj S | Portfolio</title>
   <meta name="description" content="Portfolio of Sethuraj S, B.Sc. Computer Science student with a foundation in Java and C programming.">
   <meta name="theme-color" content="#03050a">
- 
+  <meta name="color-scheme" content="dark light">
+
+  <!-- Sets the theme before the page paints, so there is no dark/light flash.
+       Uses the saved choice, otherwise the device's own light/dark setting. -->
+  <script>
+    (function () {
+      var theme = 'dark';
+      try {
+        theme = localStorage.getItem('theme') ||
+          (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+      } catch (e) {}
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
- 
+
   <!-- Lets particles.js use its 'three' imports straight from a CDN (no build step needed) -->
   <script type="importmap">
   {
@@ -26,18 +39,31 @@
 <body>
   <!-- 3D particle background is mounted here by script.js -->
   <div id="bg" aria-hidden="true"></div>
- 
+
   <header class="nav">
     <a class="brand" href="#home">Sethuraj S</a>
-    <nav aria-label="Primary">
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#education">Education</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-    </nav>
+    <div class="nav-right">
+      <nav aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#education">Education</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to light theme" title="Switch theme">
+        <!-- sun: shown in dark theme (click for light) -->
+        <svg class="icon sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="4"/>
+          <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+        </svg>
+        <!-- moon: shown in light theme (click for dark) -->
+        <svg class="icon moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/>
+        </svg>
+      </button>
+    </div>
   </header>
- 
+
   <main>
     <!-- HOME -->
     <section id="home" class="hero">
@@ -60,7 +86,7 @@
         </ul>
       </div>
     </section>
- 
+
     <!-- ABOUT -->
     <section id="about" class="section">
       <div class="container">
@@ -79,7 +105,7 @@
         </div>
       </div>
     </section>
- 
+
     <!-- SKILLS -->
     <section id="skills" class="section">
       <div class="container">
@@ -130,7 +156,7 @@
         </div>
       </div>
     </section>
- 
+
     <!-- EDUCATION -->
     <section id="education" class="section">
       <div class="container">
@@ -149,7 +175,7 @@
         </div>
       </div>
     </section>
- 
+
     <!-- PROJECTS -->
     <section id="projects" class="section">
       <div class="container">
@@ -176,7 +202,7 @@
         </article>
       </div>
     </section>
- 
+
     <!-- INTERESTS -->
     <section class="section">
       <div class="container">
@@ -188,7 +214,7 @@
         </div>
       </div>
     </section>
- 
+
     <!-- CONTACT -->
     <section id="contact" class="section">
       <div class="container">
@@ -208,12 +234,11 @@
       </div>
     </section>
   </main>
- 
+
   <footer class="footer">
     <p>&copy; <span id="year">2026</span> Sethuraj S</p>
   </footer>
- 
+
   <script type="module" src="script.js"></script>
 </body>
 </html>
- 
